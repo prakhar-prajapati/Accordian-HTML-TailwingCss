@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+<style>
+  .max-h-0 {
+  max-height: 0;
+}
+</style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="bg-gray-100 h-screen w-screen flex justify-center">
+      
+    <div  class="bg-gray-100 pt-10 px-3 pb-20"  x-data="{selected:null}">
+    <h1 class="font-medium max-w-xl mx-auto pt-10 pb-4">Smooth Accordion</h1>
+      <ul>
+              
+      <li class="item bg-white shadow-md rounded-md my-10 max-w-4xl mx-auto">
+  
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 1 ? selected = 1 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="ml-3 md:ml-4 lg:ml-6 md:text-lg text-indigo-600">
+              Should I use reCAPTCHA v2 or v3?</span>
+            <span class="ico-plus"></span>
+              <span >
+                <svg class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </span>
+                
+          </div>
+                </button>
+  
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700"  x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''">
+          <div class="p-6">
+            <p>reCAPTCHA v2 is not going away! We will continue to fully support and improve security and usability for v2.</p>
+  <p>reCAPTCHA v3 is intended for power users, site owners that want more data about their traffic, and for use cases in which it is not appropriate to show a challenge to the user.</p>
+  <p>For example, a registration page might still use reCAPTCHA v2 for a higher-friction challenge, whereas more common actions like sign-in, searches, comments, or voting might use reCAPTCHA v3. To see more details, see the reCAPTCHA v3 developer guide.</p>
+          </div>
+        </div>
+  
+      </li>
+  
+    
+      <li class="item bg-white shadow-md rounded-md my-10 max-w-4xl mx-auto">
+  
+        <button type="button" class="w-full px-8 py-6 text-left" @click="selected !== 2 ? selected = 2 : selected = null">
+          <div class="flex items-center justify-between">
+            <span class="ml-3 md:ml-4 lg:ml-6 md:text-lg text-indigo-600">
+              Should I use reCAPTCHA v2 or v3?</span>
+            <span class="ico-plus"></span>
+              <span >
+                <svg  class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </span>
+                
+          </div>
+                </button>
+  
+        <div class="relative overflow-hidden transition-all max-h-0 duration-700"  x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px' : ''">
+          <div class="p-6">
+            <p>reCAPTCHA v2 is not going away! We will continue to fully support and improve security and usability for v2.</p>
+  <p>reCAPTCHA v3 is intended for power users, site owners that want more data about their traffic, and for use cases in which it is not appropriate to show a challenge to the user.</p>
+  <p>For example, a registration page might still use reCAPTCHA v2 for a higher-friction challenge, whereas more common actions like sign-in, searches, comments, or voting might use reCAPTCHA v3. To see more details, see the reCAPTCHA v3 developer guide.</p>
+          </div>
+        </div>
+  
+      </li>
+     
+    
+     
+        </ul>
+    </div>
+    
+    </div>
+
+</body>
+</html>
